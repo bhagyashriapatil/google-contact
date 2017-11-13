@@ -1,0 +1,73 @@
+<div class="col-sm-6">
+    <form #updateForm="ngForm" class="mt20" novalidate>
+        <!-- <legend>Update Below Data:</legend> -->
+        <legend class="page-header text-center">Add Data:</legend>
+        <div class="col-sm-12 mt10">
+            <!-- <p> -->
+                <label for="state">Add State</label>
+                <input type="text" class="form-control" name="state" [(ngModel)]="data.state" #state="ngModel" required>
+                <button class="btn btn-info text-center mt5" (click)="addState(data.state)">Submit</button>
+              <!-- </p> -->
+        </div>
+        
+        <div class="col-sm-12 mt10">
+         <!-- <p> -->
+          <label for="district">Add District</label>
+          <!-- state dropdown start -->
+          <p>
+          <label>State</label>
+          <select class="form-control" [(ngModel)]="selectedState" name="selectedStat" #selectedStat="ngModel">
+              <option value="">Please select a state</option>
+              <option *ngFor="let stateobj of states">
+                {{stateobj.state}}
+              </option>  
+          </select>
+        </p>
+          <!-- state dropdown end -->
+          <input type="text" class="form-control" name="district" [(ngModel)]="data.district" #district="ngModel" required>
+          <button class="btn btn-info text-center mt5" (click)="addDistrict(selectedState, data.district)">Submit</button>
+         <!-- </p> -->
+        </div>
+
+        <div class="col-sm-12 mt10">
+         <!-- <p> -->
+          <label for="taluka">Add Taluka</label>
+          <p>
+              <label>State</label>
+              <select class="form-control" [(ngModel)]="selectState" name="selectedStat" #selectedStat="ngModel">
+                  <option value="">Please select a state</option>
+                  <option *ngFor="let stateobj of states">
+                    {{stateobj.state}}
+                  </option>  
+              </select>
+            </p>
+            <p>
+                <label>District</label>
+                <select class="form-control" [(ngModel)]="selectedDistrict" name="selectedDist" #selectedDist="ngModel">
+                    <option value="">Please select a district</option>
+                    <option *ngFor="let distObj of districts">
+                      {{distObj.district}}
+                    </option>  
+                </select>
+              </p>
+          <input type="text" class="form-control" name="taluka" [(ngModel)]="data.taluka" #taluka="ngModel" required>
+          <button class="btn btn-info text-center mt5" (click)="addTaluka(selectState,selectedDistrict,data.taluka)">Submit</button>
+         <!-- </p> -->
+        </div>
+        ------------------------------------
+        <p>
+          states: {{states|json}}
+        </p>
+        <p>
+            districts: {{districts|json}}
+          </p>
+          <p>
+              taluka: {{talukas|json}}
+            </p>
+      
+    </form>
+
+  <div class="create-contact" popover="Add New District"
+  placement="top" triggers="mouseenter:mouseleave" (click)="addNewDistrict()">Add New District
+</div>
+</div>

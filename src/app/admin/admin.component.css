@@ -1,0 +1,36 @@
+
+.content {
+    width: 100%;
+    text-align: center;
+}
+.data-label {
+    color: #757575;
+    font: 400 16px/24px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    padding-bottom: 10px;
+    padding-top: 32px;
+}
+.noData {
+    background-image: url('../../assets/images/blank-book.jpg');
+    background-repeat: no-repeat;
+    height: 200px;
+    margin: auto;
+    width: 200px;
+    border: 1px solid #e2abab78;
+    border-radius: 98px;
+    margin-top: 12%;
+    left: 10%;
+}
+.create-contact {
+    background-color: #e91e63e6;
+    color: #fff;
+    bottom: 0;
+    margin-bottom: 24px;
+    margin-right: 24px;
+    position: fixed;
+    right: 0;
+    padding: 20px 15px;
+    border-radius: 43px;
+}
+/* .add-district {
+
+} */

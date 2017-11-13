@@ -1,0 +1,125 @@
+<nav class="navbar navbar-default nav-shadow navbar-fixed-top">
+  <div class="container-fluid nomarleft">
+    
+    <div class="navbar-header" (click)="toggle()">
+      <img class="logostyle" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" />
+      <a class="navbar-brand" href="#">Google Districts</a> 
+    </div>
+    <ul class="nav navbar-nav navbar-left">
+        <li><a routerLink="/login" routerLinkActive="Active">Login</a></li>
+        <li><a routerLink="/home" routerLinkActive="Active">Home</a></li>
+        <li><a routerLink="/signup" routerLinkActive="Active">Signup</a></li>
+    </ul>
+      <button class="btn btn-sm btn-border pull-right mt10" (click)="logout()">Logout</button>
+  </div>
+</nav>
+<div class="col-sm-12 nopadleft">
+
+<div class="col-sm-3 nopadleft">
+<div class="wrapper">
+  <div id="sidebar" *ngIf="this.loginService.getToggle()">
+      <!-- Sidebar Header -->
+      <!-- <div class="sidebar-header">
+          <h3>Collapsible Sidebar</h3>
+      </div> -->
+      <!-- </div> -->
+      <!-- Sidebar Links -->
+      <ul class="list-unstyled components">
+          <li class="active">
+              <a routerLink="/admin">
+                  <span><i class="glyphicon glyphicon-user"></i></span>
+                  <span>Admin</span>
+                  <span>(555)</span>
+              </a>
+          </li>
+          <li><!-- Link with dropdown items -->
+              <a data-toggle="collapse" aria-expanded="false">
+                      <span><i class="glyphicon glyphicon-screenshot"></i></span> 
+                      <span>Profile</span>
+                      <span>(05)</span>
+              </a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                  <li><a>Page</a></li>
+                  <li><a>Page</a></li>
+                  <li><a>Page</a></li>
+              </ul>
+          </li> 
+          <li>
+                  <a>
+                      <span><i class="glyphicon glyphicon-duplicate"></i></span> 
+                      <span>Duplicate</span>
+                      <span>(55)</span>
+                  </a>
+          </li>
+          <hr class="nomarbtm">
+          <li class="pt5 pb5">
+                  <a>
+                          <span>
+                              <i *ngIf="!isLabelup" (click)="isLabelup=!isLabelup;" class="glyphicon glyphicon-menu-down"></i>
+                              <i *ngIf="isLabelup" (click)="isLabelup=!isLabelup;" class="glyphicon glyphicon-menu-up"></i>
+                          </span>
+                          <span>Labels</span>
+                  </a>
+                  <ul *ngIf="isLabelup" class="list-unstyled">
+                          <li>
+                              <a>
+                                  <span><i class="glyphicon glyphicon-plus"></i></span>
+                                  <span>Create Labels</span>
+                              </a>
+                          </li>
+                  </ul>
+          </li>
+          <hr class="nomartop nomarbtm">
+          <li class="pt5 pb5">
+                  <a>
+                          <span>
+                              <i *ngIf="!isMenuup" (click)="isMenuup=!isMenuup;" class="glyphicon glyphicon-menu-down"></i>
+                              <i *ngIf="isMenuup" (click)="isMenuup=!isMenuup;" class="glyphicon glyphicon-menu-up"></i>
+                          </span>
+                          <span>More</span>
+                  </a>
+                  <ul *ngIf="isMenuup" class="list-unstyled">
+                          <li><a>Page</a></li>
+                          <li><a>Page</a></li>
+                          <li><a>Page</a></li>
+                  </ul>
+          </li>
+          <hr class="nomartop">
+          <li>
+                  <a>
+                          <span><i class="glyphicon glyphicon-hourglass"></i></span> 
+                          <span>Settings</span>
+                          <span>(55)</span>
+                  </a>
+          </li>
+          <li>
+                  <a>
+                          <span><i class="glyphicon glyphicon-scale"></i></span> 
+                          <span>Send Feedback</span>
+                          <span>(55)</span>
+                      </a>
+          </li>
+          <li>
+                  <a>
+                          <span><i class="glyphicon glyphicon-modal-window"></i></span> 
+                          <span>Help</span>
+                          <span>(55)</span>
+                      </a>
+          </li>
+          
+      </ul>
+  </div>
+  
+
+ 
+</div>
+</div>
+
+<div class="col-sm-9">
+<div class="routeStyle">       
+  <router-outlet></router-outlet>
+</div>
+</div>
+
+</div>
+

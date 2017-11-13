@@ -1,0 +1,43 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Create District</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span class="close-modal" aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+      <form #updateForm="ngForm" novalidate>
+          <!-- <legend>Update Below Data:</legend> -->
+          <!-- <div class="page-header">Update Below Data:</div> -->
+          <p>
+            <label for="firstname">First Name</label>
+            <input type="text" class="form-control" name="firstName" [(ngModel)]="updateData.firstName" #firstName="ngModel" required>
+          </p>
+          <p>
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="updateData.lastName" #lastName="ngModel" required>
+          </p>
+          <p>
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="updateData.email" #email="ngModel" required>
+          </p>
+          <p>
+            <label for="text">Password</label>
+            <input type="text" class="form-control" name="password" [(ngModel)]="updateData.password" #password="ngModel" required>
+          </p>
+          <p>
+              <label for="text">Language</label>
+              <input type="text" class="form-control" name="language" [(ngModel)]="updateData.language" #language="ngModel" required>
+          </p>
+          <p>
+              <label for="text">Rating</label>
+              <input type="text" class="form-control" name="rating" [(ngModel)]="updateData.rating" #rating="ngModel" required>
+          </p>
+      </form>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-info" (click)="bsModalRef.hide()">Cancel</button>
+    <button type="button" class="btn btn-info" popoverTitle="Are you sure to Save the updated changes?"  popover="If Yes then Click to Save."
+    placement="left" triggers="mouseenter:mouseleave" (click)="update(updateData)">Save</button>
+  </div>
