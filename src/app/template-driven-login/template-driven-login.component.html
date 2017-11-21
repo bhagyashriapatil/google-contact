@@ -1,5 +1,5 @@
 <div class="col-sm-12">
-  <div class="col-xs-6 col-xs-offset-4 col-sm-4 fc-card fc-top-145">
+  <div class="col-xs-8 col-xs-offset-3 col-sm-5 fc-card fc-top-145" [ngClass]="{'col-xs-offset-2': !loginService.getToggle()}">
       <div class="page-header nomartop text-center"><span>Login</span></div>
       <form #loginForm="ngForm" (ngSubmit)="login(data)">
         <div class="col-sm-12 form-group" [ngClass]="{'has-danger': email.invalid && (email.dirty||email.touched),'has-success':email.valid && (email.dirty||email.touched)}">

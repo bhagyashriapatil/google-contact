@@ -17,7 +17,7 @@
 
 <div class="col-sm-3 nopadleft">
 <div class="wrapper">
-  <div id="sidebar" *ngIf="this.loginService.getToggle()">
+  <div id="sidebar" *ngIf="loginService.getToggle()">
       <!-- Sidebar Header -->
       <!-- <div class="sidebar-header">
           <h3>Collapsible Sidebar</h3>
@@ -45,11 +45,11 @@
               </ul>
           </li> 
           <li>
-                  <a>
-                      <span><i class="glyphicon glyphicon-duplicate"></i></span> 
-                      <span>Duplicate</span>
-                      <span>(55)</span>
-                  </a>
+                <a>
+                    <span><i class="glyphicon glyphicon-duplicate"></i></span> 
+                    <span>Duplicate</span>
+                    <span>(55)</span>
+                </a>
           </li>
           <hr class="nomarbtm">
           <li class="pt5 pb5">
@@ -116,9 +116,9 @@
 </div>
 
 <div class="col-sm-9">
-<div class="routeStyle">       
+ <div class="routeStyle">       
   <router-outlet></router-outlet>
-</div>
+ </div>
 </div>
 
 </div>

@@ -1,4 +1,4 @@
-<div class="col-sm-6">
+<div class="col-sm-6 col-sm-offset-1" [ngClass]="{'col-sm-offset-2': !loginService.getToggle()}">
     <form #updateForm="ngForm" class="mt20" novalidate>
         <!-- <legend>Update Below Data:</legend> -->
         <legend class="page-header text-center">Add Data:</legend>

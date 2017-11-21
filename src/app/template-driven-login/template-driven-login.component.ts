@@ -28,13 +28,12 @@ export class TemplateDrivenLoginComponent implements OnInit {
     this.loginService.validateUser(data)
     .subscribe(res=>{
       // set localstorage using "currentUser" token
-      localStorage.setItem('currentUser',JSON.stringify(res.data));
+      localStorage.setItem('currentUser',JSON.stringify(res.success.data[0]._id));
       
       // check token is exist or not
       if(this.loginService.getUserLoggedIn()){
         this.router.navigate(['home']);
       }
-
     },err=>{
       alert("Hey unauthorized user, Please enter valid credentials");
       return Observable.throw(err);

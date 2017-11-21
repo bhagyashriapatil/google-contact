@@ -11,8 +11,9 @@ import { ListResolver } from '../router/list.resolver';
 export const appRoutes: Routes = [
     { path: 'login', component: TemplateDrivenLoginComponent },
     { path: 'signup', component: SignupComponent },
-    { path: 'home', component: HomeComponent, canActivate: [AuthGuard], resolve: {user: ListResolver} },
-    { path: 'admin', component: AdminComponent },
+    // , canActivate: [AuthGuard], resolve: {user: ListResolver}
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
     { path: '',
       redirectTo: '/login',
       pathMatch: 'full'
